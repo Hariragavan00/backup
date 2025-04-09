@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Booksky </title>
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <style>
+        .poppins-regular-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        * {
+            margin: 0;
+            top: 0;
+        }
+
+        h1 {
+            background-color: #ff1d58;
+            padding: 5px;
+        }
+
+        .book-container {
+            margin: 40px;
+            top: 40px;
+            width: 25%;
+            border: solid black;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .book-container h2 {
+            padding: 10px;
+            top: 10px;
+            color: #ff1d58;
+        }
+
+        .book-container h5 {
+            padding-left: 10px;
+
+        }
+
+        .book-container p {
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        .book-container button {
+            margin: 15px;
+            margin-left: 40%;
+            background-color: #ff1d58;
+            border-radius: 5px;
+            border: none;
+            padding: 2px;
+            
+        }
+
+        .layer {
+            position: relative;
+            opacity: 0.8;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            display: none;
+        }
+
+        .b1 {
+            border-radius: 100%;
+            border: none;
+            background-color: #ff1d58;
+            padding: 30px;
+            font-size: 40px;
+            position:sticky;
+            bottom: 0px;
+            margin-left: 90%;
+        }
+
+        .book2 {
+            background-color: #ff1d58;
+            width: 40%;
+            border-radius: 10px;
+            padding: 40px;
+            position: absolute;
+            top: 20%;
+            left: 25%;
+            z-index: 2;
+            display: none;
+        }
+
+        .book2 input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid black;
+            color: black;
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .short {
+            background-color: transparent;
+            color: black;
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+            font-size: 20px;
+            border: 2px solid black;
+        }
+
+        .title:focus {
+            outline: none;
+        }
+
+        .author:focus {
+            outline: none;
+        }
+
+        .short:focus {
+            outline: none;
+        }
+
+        .book2 button {
+            background-color: black;
+            color: white;
+            border: solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 10px;
+        }
+    </style>
+
+    <h1> Booksky </h1>
+    <div class="container">
+        <div class="book-container">
+            <h2> Hariragavan's Stories </h2>
+            <h5> Hariragavan </h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ratione quos repellendus molestiae
+                maiores
+                ipsam quisquam nihil doloribus fugiat iste provident debitis optio in eaque, eligendi possimus? Eum
+                veniam
+                hic iure reiciendis libero quidem exercitationem, nesciunt laboriosam, dolores officia magnam unde
+                perferendis porro perspiciatis assumenda consequuntur debitis aperiam laborum quis. Corrupti itaque
+                ipsa,
+                magnam velit aspernatur aut esse repellendus nemo distinctio alias unde repellat reiciendis dolorem
+                doloremque delectus quis aliquam!</p>
+            <button onclick="d1(event)"> Delete </button>
+        </div>
+    </div>
+
+    <div class="book2">
+        <h2> Add book </h2>
+        <form>
+            <input type="text" placeholder=" Book title" class="title">
+            <input type="text" placeholder="Book Author" class="author">
+            <textarea placeholder="short describtion" class="short"></textarea>
+            <button class="b2"> ADD </button>
+            <button class="cancel"> CANCEL </button>
+        </form>
+    </div>
+    <div class="layer"> </div>
+    <button class="b1"> + </button>
+
+    <script>
+
+        var layer = document.querySelector(".layer")
+        var b1 = document.querySelector(".b1")
+        var book2 = document.querySelector(".book2")
+        var cancelbtn = document.querySelector(".cancel")
+
+        b1.addEventListener("click", function () {
+            layer.style.display = "block"
+            book2.style.display = "block"
+        })
+
+        cancelbtn.addEventListener("click", function (event) {
+            event.preventDefault()
+            layer.style.display = "none"
+            book2.style.display = "none"
+        })
+
+        var title = document.querySelector(".title")
+        var author = document.querySelector(".author")
+        var short = document.querySelector(".short")
+        var b2 = document.querySelector(".b2")
+        var container = document.querySelector(".container")
+
+        b2.addEventListener("click", function(event){
+            event.preventDefault()
+            var div = document.createElement("div")
+            div.setAttribute("class", "book-container")
+            div.innerHTML = `<h2>${title.value}</h2>
+            <h5> ${author.value}</h5>
+            <p>${short.value}</p> 
+            <button onclick="d1(event)"> Delete </button>`
+
+            container.append(div)
+            layer.style.display = "none"
+            book2.style.display = "none"
+        })
+
+        function d1(event){
+            event.target.parentElement.remove()
+        }
+
+    </script>
+</body>
+
+</html>

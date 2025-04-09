@@ -1,0 +1,59 @@
+<style>
+    *{
+        margin: 0px;
+        top: 0px;
+    }
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        border-radius: 10px;
+        transition: all .5s;
+        position: absolute;
+        top: 80%;
+        left: 90%;
+        /*transition-timing-function: cubic-bezier(0.01, -0.41, 0.57, -0.02);*/
+        transition-delay: 3s;
+        animation-name: circle;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .box:hover {
+        background-color: blue;
+        scale: 2;
+        transform: translatez(100px)
+    }
+    @keyframes circle {
+       50%{
+        right: 0px;
+        bottom: 0px;
+        background-color: orchid;
+        border-radius: 0px;
+       }
+
+
+        100%{
+            top: 0px;
+            margin: 0px;
+            left: 0px;
+            background-color: whitesmoke;
+            border-radius: 100%;
+        }
+        
+    }
+
+    div {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+    }
+</style>
+
+<div class="box"> </div>
+
+<div></div>
+
