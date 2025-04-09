@@ -1,64 +1,82 @@
-body{
-    background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(121,32,153,1) 86%);
-    background-attachment: fixed;
-    margin:0;
-    font-family: 'Poppins', sans-serif; 
+*{
+    margin: 0%;
+    padding: 0px;
 }
-
-#form{
-    width:400px;
-    margin:20vh auto 0 auto;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    padding:30px;
+.one{
+    margin-top: 10px;
+    border: 2px solid;
+    border-color:blue;
 }
-
+nav{
+    background-color: black;
+    color: white;
+    padding-top:10px;
+    padding-bottom: 10px;
+    }
 h1{
     text-align: center;
-    color:#792099;
 }
-
-#form button{
-    background-color: #792099;
-    color:white;
-    border: 1px solid #792099;
-    border-radius: 5px;
-    padding:10px;
-    margin:20px 0px;
-    cursor:pointer;
-    font-size:20px;
-    width:100%;
+ul,li{
+    background-color: black;
+    color: white;
+    display: inline;
+    }
+ul{
+    margin-left: 43%;
+    }
+li{
+    cursor: pointer;
 }
-
-.input-group{
-    display:flex;
-    flex-direction: column;
-    margin-bottom: 15px;
+ li:hover{
+    color:wheat;
+ }   
+ .box{
+    display: inline-block;
+    width: 250px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+ }
+ .products{
+    text-align: center;
+    margin-top: 20px;
+ }
+ .box:hover{
+    background-color: black;
+    color: white;
+ }
+ span{
+    background-color: black;
+    color: white;
+ }
+ .form{
+    margin-left: 40%;
+    }
+.last{
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    padding-top: 20px;
+} 
+.box2{
+    margin-left: 33%;
+    display: inline-block;
+    border-style: solid ;
+    background-color: yellow;
+    color: black;
 }
-
-.input-group input{
-    border-radius: 5px;
-    font-size:20px;
-    margin-top:5px;
-    padding:10px;
-    border:1px solid rgb(34,193,195) ;
+.box3{
+    padding-left: 200px;
+    padding-right: 200px;
+    }
+.hari{
+    margin-top: 25px;
+    text-align: center;
+    }
+.h2:hover{
+    color: wheat;
 }
-
-.input-group input:focus{
-    outline:0;
-}
-
-.input-group .error{
-    color:rgb(242, 18, 18);
-    font-size:16px;
-    margin-top: 5px;
-}
-
-.input-group.success input{
-    border-color: #0cc477;
-}
-
-.input-group.error input{
-    border-color:rgb(206, 67, 67);
+.h2{
+    cursor:progress;
+    color: blue;
 }
